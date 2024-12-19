@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './seotracker.css'; // Import the CSS file
 import Chart from 'chart.js/auto'; // Import Chart.js
-import { fetchSeoData, saveSeoData, updateSeoData, deleteSeoData } from '../../firebase';
+import { fetchSeoData, updateSeoData,  } from '../../firebase';
 
 // Hoisting the loadData function
 const loadData = async () => {
@@ -148,9 +148,9 @@ const SeoTracker = () => {
   // Handle chart click event to select point
   const handleChartClick = (event, chartId) => {
     const chart = chartRefs.current[chartId];
-    const canvasPosition = chart.canvas.getBoundingClientRect();
-    const x = event.clientX - canvasPosition.left;
-    const y = event.clientY - canvasPosition.top;
+    //const canvasPosition = chart.canvas.getBoundingClientRect();
+    // const x = event.clientX - canvasPosition.left;
+    // const y = event.clientY - canvasPosition.top;
 
     const points = chart.getElementsAtEventForMode(event, 'nearest', { intersect: true }, false);
 
